@@ -10,7 +10,7 @@ object RetrofitUtils {
 
     fun getApiUrl(): ApiService {
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://api.pexels.com")
+            .baseUrl("http://49.232.159.16")
             .client(okHttpClient())
             .addConverterFactory(MoshiConverterFactory.create())
             .build()
