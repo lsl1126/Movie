@@ -13,12 +13,79 @@
         app:layout_constraintDimensionRatio="16:10"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.core.widget.NestedScrollView
+
+    <FrameLayout
+        android:id="@+id/fl1"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/player">
 
-    </androidx.core.widget.NestedScrollView>
+        <TextView
+            android:id="@+id/tv_vod_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="巴斯特基顿之与屠夫打斗"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_more_blurb"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="end|center_vertical"
+            android:text="@string/text_more_blurb"
+            android:textColor="#717171"
+            android:textSize="12sp" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tv_vod_blurb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:text="养尊处优的富家公子阿尔弗莱德·巴特勒（巴斯特·基顿饰）被父亲勒令到山里打猎钓鱼，想要他锻炼得更像个男子汉。巴特勒既没能打到一个猎物也没能钓上一条鱼，却在山里结识了心爱的女孩（萨丽·奥尼尔饰）。女孩的父亲和兄长嫌弃他过于瘦弱拒绝了求婚请求，巴特勒只好冒充成同名同姓的拳击冠军“战将”巴特勒。在一连串的误会后，巴特勒不得不准备登上擂台迎战绰号“亚拉巴马谋杀犯”的拳击手……"
+        android:textColor="#717171"
+        android:textSize="12sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fl1" />
+
+    <FrameLayout
+        android:id="@+id/fl2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_vod_blurb">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="选择资源"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="end|center_vertical"
+            android:text="无法观看尝试切换下方资源"
+            android:textColor="#717171"
+            android:textSize="12sp" />
+    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

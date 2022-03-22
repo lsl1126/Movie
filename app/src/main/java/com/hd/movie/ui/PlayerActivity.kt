@@ -45,7 +45,10 @@ class PlayerActivity : AppCompatActivity() {
     private fun collect() {
         lifecycleScope.launch {
             viewModel.vodDetailFlow.filterNotNull().collect {
-
+                binding.apply {
+                    tvVodName.text = it.vod_name
+                    tvVodBlurb.text = it.vod_blurb
+                }
             }
         }
     }
