@@ -7,31 +7,27 @@ import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
 import com.hd.movie.bean.VodData
+import com.hd.movie.bean.VodDetail
 import com.hd.movie.bean.VodType
 import com.hd.movie.repository.HomeRepository
+import com.hd.movie.repository.PlayerRepository
 import com.hd.movie.repository.VodPagingSource
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 
-class HomeViewModel : ViewModel() {
+class PlayerViewModel : ViewModel() {
 
-    val vodTypeFlow = MutableStateFlow<VodType?>(null)
+    val vodDetailFlow = MutableStateFlow<VodDetail?>(null)
 
     private val repository by lazy {
-        HomeRepository()
+        PlayerRepository()
     }
 
-    fun getVodTypes() {
+    fun getVodDetail(vodId: Int) {
         viewModelScope.launch {
-            vodTypeFlow.value = repository.getVodTypes()
+            vodDetailFlow.value = repository.getVodDetail(vodId)
         }
-    }
-
-    fun getVod(typeId: Int): Flow<PagingData<VodData>> {
-        return Pager(PagingConfig(15)) {
-            VodPagingSource(typeId)
-        }.flow.cachedIn(viewModelScope)
     }
 
 }

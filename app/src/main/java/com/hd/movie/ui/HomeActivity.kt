@@ -1,5 +1,6 @@
 package com.hd.movie.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
@@ -9,7 +10,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
-import com.hd.movie.base.VodType
+import com.hd.movie.bean.VodType
 import com.hd.movie.databinding.ActivityHomeBinding
 import com.hd.movie.viewmodel.HomeViewModel
 import kotlinx.coroutines.flow.collect
@@ -32,7 +33,7 @@ class HomeActivity : AppCompatActivity() {
 
     private fun collect() {
         lifecycleScope.launch {
-            viewModel.vodType.filterNotNull().collect {
+            viewModel.vodTypeFlow.filterNotNull().collect {
                 initView(it)
             }
         }
@@ -52,6 +53,11 @@ class HomeActivity : AppCompatActivity() {
             ) { tab: TabLayout.Tab, position: Int ->
                 tab.text = type.list[position].type_name
             }.attach()
+        }
+        binding.search.setOnClickListener {
+            startActivity(
+                Intent(this, SearchActivity::class.java)
+            )
         }
     }
 

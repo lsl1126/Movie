@@ -12,17 +12,40 @@
         android:contentDescription="@string/app_name"
         android:scaleType="fitXY"
         android:src="@color/black"
-        app:layout_constraintBottom_toTopOf="@id/text_Vod"
+        app:layout_constraintBottom_toTopOf="@id/tv_Vod"
         app:layout_constraintDimensionRatio="2:3"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <TextView
-        android:id="@+id/text_Vod"
+        android:id="@+id/tv_Remarks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:textColor="@color/white"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="@id/image_Vod"
+        app:layout_constraintLeft_toLeftOf="parent"
+        tools:ignore="SmallSp" />
+
+    <TextView
+        android:id="@+id/tv_Score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:textColor="#FF9800"
+        android:textSize="12sp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/image_Vod"
+        tools:ignore="SmallSp" />
+
+    <TextView
+        android:id="@+id/tv_Vod"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:maxLines="1"
         android:ellipsize="end"
+        android:maxLines="1"
         android:textColor="@color/black"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"

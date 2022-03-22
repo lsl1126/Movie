@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Movie</string>
+    <string name="text_cancel">取消</string>
+    <string name="text_input_search_content">请输入要搜索的内容</string>
 </resources>
